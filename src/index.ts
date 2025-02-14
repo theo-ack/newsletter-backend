@@ -5,6 +5,7 @@ import * as os from "os";
 import { serve } from "@hono/node-server";
 import * as dotenv from "dotenv";
 import { newsletter } from "./routes/neswletter";
+import { newsletter_subscriber } from "./routes/newsletter_subscriber";
 
 dotenv.config();
 
@@ -13,8 +14,8 @@ const PORT = 8080;
 
 // connect routes
 app.route("/subscriber", subscriber);
-
 app.route("/newsletter", newsletter);
+app.route("/newsletter_subscriber", newsletter_subscriber);
 
 app.get("/", (c) => {
   return c.text(`Hello from ${os.hostname()}`);
