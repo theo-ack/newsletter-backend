@@ -1,14 +1,14 @@
 import { Hono } from "hono";
-import { Subscriber } from "../modals/subscriber";
+import { Newsletter_subscriber } from "../modals/newsletter_subscriber";
 
 export const newsletter_subscriber = new Hono();
 
 newsletter_subscriber.get("/", async (c) => {
-  const subscribers = await Subscriber.findAll();
+  const newsletter_subscribers = await Newsletter_subscriber.findAll();
 
   return c.json(
     {
-      data: subscribers,
+      data: newsletter_subscriber,
     },
     200
   );
