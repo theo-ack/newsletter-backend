@@ -8,7 +8,7 @@ newsletter_subscriber.get("/", async (c) => {
 
   return c.json(
     {
-      data: newsletter_subscriber,
+      data: newsletter_subscribers,
     },
     200
   );
